@@ -1,5 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
+import BookSection from "./components/books-section";
 import Flayer from "./components/flayer";
+import MobileApp from "./components/mobile-app";
 import Navbar from "./components/navbar";
 
 function App() {
@@ -8,6 +10,8 @@ function App() {
 			<Toaster />
 			<Navbar />
 			<Flayer />
+			<BookSection />
+			<MobileApp />
 		</div>
 	);
 }
