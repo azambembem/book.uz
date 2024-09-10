@@ -7,21 +7,23 @@ import Navbar from "./components/navbar";
 import News from "./components/news";
 import Statistics from "./components/statistics";
 import Week from "./components/week";
+import LastPages from "./components/last-pages";
 
 function App() {
-	return (
-		<div>
-			<Toaster />
-			<Navbar />
-			<Flayer />
-			<BookSection />
-			<Week />
-			<MonthTopBooks />
-			<MobileApp />
-			<Statistics />
-			<News />
-		</div>
-	);
+  return (
+    <div>
+      <Toaster />
+      <Navbar />
+      <Flayer />
+      <BookSection />
+      <Week />
+      <MonthTopBooks />
+      <MobileApp />
+      <Statistics />
+      <News />
+      <LastPages />
+    </div>
+  );
 }
 
 export default App;
