@@ -52,7 +52,7 @@ const auth = createSlice({
 		) {
 			state.sign_up = { ...state.sign_up, ...payload };
 		},
-		setOtp(state, { payload }: { payload: Partial<InitialState["otpgit "]> }) {
+		setOtp(state, { payload }: { payload: Partial<InitialState["otp"]> }) {
 			state.otp = { ...state.otp, ...payload };
 		},
 	},

@@ -1,9 +1,19 @@
-import { DialogHeader } from "@/components/ui/dialog";
+import {
+	DialogDescription,
+	DialogHeader,
+	DialogTitle,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
+import { useReduxDispatch, useReduxSelector } from "@/hooks/useRedux";
+import { setSignIn } from "@/redux/slices/auth";
 
 const SignIn = () => {
+	const dispatch = useReduxDispatch();
+	const {
+		sign_in: { number },
+	} = useReduxSelector(({ auth }) => auth);
+
 	return (
 		<div>
 			<DialogHeader>
@@ -19,6 +29,8 @@ const SignIn = () => {
 						Telefon Raqam:
 					</Label>
 					<Input
+						value={number}
+						onChange={(e) => dispatch(setSignIn({ number: e.target.value }))}
 						id="name"
 						type="number"
 						placeholder="+998 77 777 15 65"
