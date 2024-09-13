@@ -5,9 +5,11 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
+import type { TUser } from "@/types";
 import { Dialog, DialogTrigger } from "@radix-ui/react-dialog";
 import { Heart, User, WalletCards } from "lucide-react";
 import type { FC } from "react";
+import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
@@ -15,6 +17,7 @@ import AuthDialog from "./auth-dialog";
 
 const Flayer: FC = () => {
 	const isAuthenticated = useIsAuthenticated();
+	const auth = useAuthUser<TUser>();
 
 	return (
 		<div className="w-[90%] m-auto mt-4">
@@ -59,7 +62,7 @@ const Flayer: FC = () => {
 
 					{isAuthenticated ? (
 						<Button className="flex gap-2" variant="outline">
-							User
+							{auth?.name} {auth?.surname}
 						</Button>
 					) : (
 						<Dialog>

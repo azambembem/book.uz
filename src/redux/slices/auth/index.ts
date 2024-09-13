@@ -17,6 +17,8 @@ type InitialState = {
 		verification: string;
 		state: State;
 	};
+	state: "otp" | "sign-in" | "sign-up";
+	
 };
 
 const initialState: InitialState = {
@@ -34,6 +36,7 @@ const initialState: InitialState = {
 		verification: "",
 		state: null,
 	},
+	state: "sign-in",
 };
 
 const auth = createSlice({
@@ -55,8 +58,14 @@ const auth = createSlice({
 		setOtp(state, { payload }: { payload: Partial<InitialState["otp"]> }) {
 			state.otp = { ...state.otp, ...payload };
 		},
+		setAuthState(state, {payload}: {payload: InitialState["state"]}) {
+			state.state = payload;
+		}
+		
 	},
 });
 
 export default auth.reducer;
-export const { setOtp, setSignIn, setSignUp } = auth.actions;
+export const { setOtp, setSignIn, setSignUp, setAuthState } = auth.actions;
+
+

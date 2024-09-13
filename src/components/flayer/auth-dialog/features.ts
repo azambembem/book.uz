@@ -1,5 +1,5 @@
 import { useReduxDispatch, useReduxSelector } from "@/hooks/useRedux";
-import { setOtp, setSignIn } from "@/redux/slices/auth";
+import { setOtp, setSignIn, setSignUp } from "@/redux/slices/auth";
 import axios from "axios";
 import useSignIn from "react-auth-kit/hooks/useSignIn";
 
@@ -14,14 +14,14 @@ type AuthDialogFeatures = {
 };
 
 export const useAuthDialogFeatures = (): AuthDialogFeatures => {
-	const { sign_in, otp } = useReduxSelector(({ auth }) => auth);
+	const { sign_in, otp, sign_up, state } = useReduxSelector(({ auth }) => auth);
 	const signIn = useSignIn();
 
 	const dispatch = useReduxDispatch();
 
 	const onSignIn: ON_SING_IN = async () => {
 		dispatch(setSignIn({ state: "loading" }));
-		const { data } = await axios({
+		 await axios({
 			url: "https://book-uz-backend.onrender.com/api/auth/sign-in",
 			method: "POST",
 			data: {
@@ -30,14 +30,28 @@ export const useAuthDialogFeatures = (): AuthDialogFeatures => {
 		});
 		dispatch(setSignIn({ state: null }));
 	};
-	const onSignUp: ON_SING_UP = async () => {};
+	const onSignUp: ON_SING_UP = async () => {
+		dispatch(setSignUp({ state: "loading" }));
+		 await axios({
+			url: "https://book-uz-backend.onrender.com/api/auth/sign-up",
+			method: "POST",
+			data: {
+				phoneNumber: `+${sign_up.number}`,
+				name: sign_up.name,
+				surname: sign_up.surname
+			},
+		});
+		dispatch(setSignUp({ state: null }));
+
+		
+	};
 	const onOtpVerify: ON_OTP_VERIFY = async () => {
 		dispatch(setOtp({ state: "loading" }));
 		const { data } = await axios({
 			url: "https://book-uz-backend.onrender.com/api/auth/verify-otp",
 			method: "POST",
 			data: {
-				phoneNumber: `+${sign_in.number}`,
+				phoneNumber: `+${state === "sign-in" ? sign_in.number : sign_up.number}`,
 				otpCode: Number(otp.verification),
 			},
 		});
