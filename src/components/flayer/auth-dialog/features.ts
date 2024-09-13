@@ -21,7 +21,7 @@ export const useAuthDialogFeatures = (): AuthDialogFeatures => {
 
 	const onSignIn: ON_SING_IN = async () => {
 		dispatch(setSignIn({ state: "loading" }));
-		 await axios({
+		await axios({
 			url: "https://book-uz-backend.onrender.com/api/auth/sign-in",
 			method: "POST",
 			data: {
@@ -32,18 +32,16 @@ export const useAuthDialogFeatures = (): AuthDialogFeatures => {
 	};
 	const onSignUp: ON_SING_UP = async () => {
 		dispatch(setSignUp({ state: "loading" }));
-		 await axios({
+		await axios({
 			url: "https://book-uz-backend.onrender.com/api/auth/sign-up",
 			method: "POST",
 			data: {
 				phoneNumber: `+${sign_up.number}`,
 				name: sign_up.name,
-				surname: sign_up.surname
+				surname: sign_up.surname,
 			},
 		});
 		dispatch(setSignUp({ state: null }));
-
-		
 	};
 	const onOtpVerify: ON_OTP_VERIFY = async () => {
 		dispatch(setOtp({ state: "loading" }));
