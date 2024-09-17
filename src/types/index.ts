@@ -21,4 +21,4 @@ export type IRoute = {
 	element: JSX.Element;
 	id: number;
 	isPrivate?: boolean;
-}
+};
