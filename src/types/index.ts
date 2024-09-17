@@ -14,3 +14,11 @@ export type TUser = {
 	lastEnteredAt: string;
 	__v: 0;
 };
+
+export type IRoute = {
+	title: string;
+	path: string;
+	element: JSX.Element;
+	id: number;
+	isPrivate?: boolean;
+}

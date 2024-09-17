@@ -14,7 +14,7 @@ type AuthDialogFeatures = {
 };
 
 export const useAuthDialogFeatures = (): AuthDialogFeatures => {
-	const { sign_in, otp, sign_up, state } = useReduxSelector(({ auth }) => auth);
+	const { sign_in, otp, sign_up } = useReduxSelector(({ auth }) => auth);
 	const signIn = useSignIn();
 
 	const dispatch = useReduxDispatch();
@@ -49,7 +49,7 @@ export const useAuthDialogFeatures = (): AuthDialogFeatures => {
 			url: "https://book-uz-backend.onrender.com/api/auth/verify-otp",
 			method: "POST",
 			data: {
-				phoneNumber: `+${state === "sign-in" ? sign_in.number : sign_up.number}`,
+				phoneNumber: `+${sign_in.number || sign_up.number}`,
 				otpCode: Number(otp.verification),
 			},
 		});
