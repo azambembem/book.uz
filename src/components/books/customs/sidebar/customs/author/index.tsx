@@ -6,16 +6,16 @@ const tags = Array.from({ length: 50 }).map(
   (_, i, a) => `v1.2.0-beta.${a.length - i}`
 );
 
-const AllCategories = () => {
+const Author = () => {
   return (
     <div className="p-4 bg-[#f6f6f6]">
       <div className="flex items-center space-x-2 h-[52px]">
-        <Checkbox id="terms" />
+        <Checkbox id="all-author" />
         <label
-          htmlFor="terms"
+          htmlFor="all-author"
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
-          All Categories
+          Barcha Mualliflar
         </label>
       </div>
       <Input placeholder="Qidirish" type="Search" />
@@ -40,4 +40,4 @@ const AllCategories = () => {
   );
 };
 
-export default AllCategories;
+export default Author;

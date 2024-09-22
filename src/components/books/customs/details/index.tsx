@@ -1,5 +1,11 @@
+import Header from "./customs/header";
+
 const Details = () => {
-  return <div className="w-full bg-red-500">Details</div>;
+  return (
+    <div className="w-full">
+      <Header />
+    </div>
+  );
 };
 
 export default Details;
