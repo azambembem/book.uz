@@ -22,7 +22,7 @@ export const useSearchAppParams = () => {
     set({ ...pair });
   };
 
-  const setParams = (params: { [key: string]: string[] }) => {
+  const setParams = (params: { [key: string]: string }) => {
     const { pair } = getAllParams();
     set({ ...pair, ...params });
   };
@@ -31,13 +31,13 @@ export const useSearchAppParams = () => {
     set({});
   };
 
-  const getPrams = (params: string) => get.get(params);
+  const getParams = (params: string) => get.get(params);
 
   return {
     getAllParams,
     removeParamsByKeys,
     setParams,
-    getPrams,
+    getParams,
     clearParams
   };
 };
