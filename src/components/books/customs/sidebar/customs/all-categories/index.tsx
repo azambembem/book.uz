@@ -1,12 +1,14 @@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useSearchAppParams } from "@/hooks/useRedux/useSearchParams";
 
 const tags = Array.from({ length: 50 }).map(
   (_, i, a) => `v1.2.0-beta.${a.length - i}`
 );
 
 const AllCategories = () => {
+  const { setParams } = useSearchAppParams();
   return (
     <div className="p-4 bg-[#f6f6f6]">
       <div className="flex items-center space-x-2 h-[52px]">
@@ -18,8 +20,12 @@ const AllCategories = () => {
           All Categories
         </label>
       </div>
-      <Input placeholder="Qidirish" type="Search" />
-      <ScrollArea className="h-72">
+      <Input
+        onChange={(e) => setParams({ "category-search": e.target.value })}
+        placeholder="Qidirish"
+        type="Search"
+      />
+      <ScrollArea className="h-72 rounded-md">
         <div>
           {tags.map((tag) => (
             <div key={tag}>

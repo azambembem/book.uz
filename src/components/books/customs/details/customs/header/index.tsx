@@ -1,7 +1,17 @@
-import { Button } from "@/components/ui/button";
 import { Toggle } from "@/components/ui/toggle";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue
+} from "@/components/ui/select";
+import { useSearchAppParams } from "@/hooks/useRedux/useSearchParams";
 
 const Header = () => {
+  const { setParams } = useSearchAppParams();
   return (
     <div className="flex justify-between">
       <h1 className="text-xl font-semibold">Kitoblar</h1>
@@ -9,20 +19,64 @@ const Header = () => {
         <div className="flex items-center gap-1">
           <p className="text-xs">Ko'rsatish</p>
           <div className="flex gap-1">
-            <Toggle className="w-[29px] h-[29px]">9</Toggle>
-            <Toggle className="w-[29px] h-[29px]" disabled>
+            <Toggle
+              onClick={() => setParams({ count: "9" })}
+              className="w-[29px] h-[29px]"
+            >
+              9
+            </Toggle>
+            <Toggle
+              onClick={() => setParams({ count: "24" })}
+              className="w-[29px] h-[29px]"
+            >
               24
             </Toggle>
-            <Toggle disabled className="w-[29xp] h-[29px]">
+            <Toggle
+              onClick={() => setParams({ count: "36" })}
+              className="w-[29xp] h-[29px]"
+            >
               36
             </Toggle>
           </div>
         </div>
-        <div>
-          <Button variant="ghost" className="h-8 w-8">
-            <img src="/icons/filter-3.svg" alt="filter-3" />
-          </Button>
+        <div className="flex items-center gap-1">
+          <img
+            onClick={() => setParams({ cols: "3" })}
+            src="/icons/filter-3.svg"
+            alt="filter-3"
+            className="w-8 h-8 cursor-pointer"
+          />
+          <img
+            onClick={() => setParams({ cols: "4" })}
+            src="/icons/filter-4.svg"
+            alt="filter-4"
+            className="w-8 h-8 cursor-pointer"
+          />
+          <img
+            onClick={() => setParams({ cols: "6" })}
+            src="/icons/filter-5.svg"
+            alt="filter-5"
+            className="w-8 h-8 cursor-pointer"
+          />
         </div>
+        <Select
+          onValueChange={(e) => {
+            setParams({ sort: e });
+          }}
+        >
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Saralash" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Saralash</SelectLabel>
+              <SelectItem value="yangi kitoblar">Yangi kitoblar</SelectItem>
+              <SelectItem value="arzonroq">Arzonroq</SelectItem>
+              <SelectItem value="qimmatroq">Qimmatroq</SelectItem>
+              <SelectItem value="reytingi-yuqori">Reytingi yuqori</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </div>
     </div>
   );
