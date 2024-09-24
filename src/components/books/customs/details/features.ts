@@ -1,3 +1,3 @@
-const useDetailsFeatures = () =>{
-    return {}
-}
+const useDetailsFeatures = () => {
+	return {};
+};
