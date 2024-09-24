@@ -3,6 +3,8 @@ import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
 import { route } from "./utils/route";
+import Profile from "./pages/profile";
+import MeningBuyurtmalarim from "./pages/mening-buyurtmalarim";
 
 function App() {
   const isAuthenticated = useIsAuthenticated();
@@ -23,6 +25,11 @@ function App() {
             <Route key={id} {...configs} />
           )
         )}
+        <Route path="profile" element={<Profile />}>
+          {route.map(({ path }) => (
+            <Route path={path} element={<MeningBuyurtmalarim />} />
+          ))}
+        </Route>
       </Routes>
     </div>
   );

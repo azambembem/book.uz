@@ -4,7 +4,6 @@ import Yangiliklar from "./customs/yangiliklar";
 const Dashboard = () => {
   return (
     <div>
-      <div></div>
       <Yangiliklar />
       <Xabarlar />
     </div>
