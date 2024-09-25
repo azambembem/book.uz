@@ -4,14 +4,14 @@ import { Outlet } from "react-router-dom";
 // import Sozlamalar from "./sozlamalar";
 
 const Sections = () => {
-  return (
-    <div className="w-full">
-      {/* <Dashboard /> */}
-      <Outlet />
-      {/* <MeningBuyurtmalarim /> */}
-      {/* <Sozlamalar /> */}
-    </div>
-  );
+	return (
+		<div className="w-full">
+			{/* <Dashboard /> */}
+			<Outlet />
+			{/* <MeningBuyurtmalarim /> */}
+			{/* <Sozlamalar /> */}
+		</div>
+	);
 };
 
 export default Sections;

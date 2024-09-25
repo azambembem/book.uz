@@ -6,6 +6,7 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import type { FC } from "react";
+import { v4 } from "uuid";
 import { Button } from "../../../ui/button";
 import { Skeleton } from "../../../ui/skeleton";
 import { useFlayerFeatures } from "./feature";
@@ -22,8 +23,8 @@ const Flayer: FC = () => {
 			<div className="flex gap-4 h-[488px] mt-4">
 				<div className="w-[287px] bg-[#f5f5f5] p-4 rounded-sm flex flex-col gap-2 items-start h-[488px] overflow-x-auto">
 					{loading
-						? Array.from({ length: 10 }).map((_, index) => (
-								<Skeleton className="w-full h-10 bg-[#c1c1c1]" key={index} />
+						? Array.from({ length: 10 }).map(() => (
+								<Skeleton className="w-full h-10 bg-[#c1c1c1]" key={v4()} />
 							))
 						: genres?.map((genre) => (
 								<Button key={genre?._id} variant={"link"}>
