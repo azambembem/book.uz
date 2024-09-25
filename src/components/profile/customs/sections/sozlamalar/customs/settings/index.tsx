@@ -1,9 +1,9 @@
 import Card from "./card";
 
-const Barcha = () => {
+const Settings = () => {
   return (
     <div>
-      <h1 className="text-2xl font-semibold">Mening buyurtmalarim</h1>
+      <h1 className="text-2xl font-semibold"> Sozlamalar</h1>
       <div className="flex gap-5 ">
         <Card />
       </div>
@@ -11,4 +11,4 @@ const Barcha = () => {
   );
 };
 
-export default Barcha;
+export default Settings;

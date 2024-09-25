@@ -1,5 +1,11 @@
+import Settings from "./customs/settings";
+
 const Sozlamalar = () => {
-	return <div>Sozlamalar</div>;
+  return (
+    <div>
+      <Settings />
+    </div>
+  );
 };
 
 export default Sozlamalar;

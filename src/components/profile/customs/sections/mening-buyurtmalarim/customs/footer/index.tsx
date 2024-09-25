@@ -1,11 +1,7 @@
-import Card from "./card";
+// import Card from "./card";
 
 const Footer = () => {
-	return (
-		<div className="w-full">
-			<Card />
-		</div>
-	);
+  return <div className="w-full">{/* <Card /> */}</div>;
 };
 
 export default Footer;
