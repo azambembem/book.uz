@@ -1,6 +1,6 @@
-const LastPages = () => {
+const Footer = () => {
   return (
-    <div className="bg-[#171717] h-[361px]">
+    <div className="bg-[#171717] w-screen">
       <div className="w-[90%] m-auto mt-[80px]">
         <div className="flex justify-between">
           <img
@@ -20,9 +20,7 @@ const LastPages = () => {
             <h3 className="text-lg">Kitob - eng yaxshi sovg’a</h3>
             <p className="mt-[8px] text-sm">
               Ushbu kitobda muallif haqiqiy <br /> rahbar qanday boʻlishi va
-              qoʻl
-              <br />
-              ostidagilariga qanday
+              qoʻl ostidagilariga qanday
             </p>
           </div>
           <div className="h-[361px] relative text-white text-base mb-[24px]">
@@ -77,4 +75,4 @@ const LastPages = () => {
   );
 };
 
-export default LastPages;
+export default Footer;

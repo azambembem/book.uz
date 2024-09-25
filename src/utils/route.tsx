@@ -31,14 +31,14 @@ export const route: IRoute[] = [
         isPrivate: true
       },
       {
-        title: "Dashboard",
+        title: "Mening Buyurtmalarim",
         path: "my-products",
         element: <MeningBuyurtmalarim />,
         id: 2.2,
         isPrivate: true
       },
       {
-        title: "Settings",
+        title: "Sozlamalar",
         path: "settings",
         element: <Sozlamalar />,
         id: 2.3,
