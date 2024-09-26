@@ -1,12 +1,12 @@
-# echo "Running tests..."
+echo "Running tests..."
 
-# echo "o Running Bime format and automatically formating the code..."
-# npx @biomejs/biome format --write . # Automatically formating the code
+echo "o Running Bime format and automatically formating the code..."
+npx @biomejs/biome format --write . # Automatically formating the code
 
-# # Biome check
-# echo " Running Biome check and automatically fixing the code..."
-# npx @biomejs/biome check --write . # Automatically fix the code
+# Biome check
+echo " Running Biome check and automatically fixing the code..."
+npx @biomejs/biome check --write . # Automatically fix the code
 
-# # Biome fix 
-# echo " Running Bime lint and automatically linting the code..."
-# npx @biomejs/biome lint --write . # Automatically lint the code
+# Biome fix 
+echo " Running Bime lint and automatically linting the code..."
+npx @biomejs/biome lint --write . # Automatically lint the code

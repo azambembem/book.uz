@@ -3,8 +3,7 @@ import RequireAuth from "@auth-kit/react-router/RequireAuth";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
-// import MeningBuyurtmalarim from "./pages/mening-buyurtmalarim";
-// import Profile from "./pages/profile";
+import Footer from "./components/profile/footer";
 import { route } from "./utils/route";
 
 function App() {
@@ -14,6 +13,7 @@ function App() {
 		<div>
 			<Toaster />
 			<Navbar />
+
 			<Routes>
 				{route.map(
 					({
@@ -23,7 +23,6 @@ function App() {
 						children,
 						...configs
 					}) => (
-						// isPrivate ? (
 						<Route
 							key={id}
 							{...configs}
@@ -56,22 +55,11 @@ function App() {
 								)}
 						</Route>
 					),
-
-					// ) : (
-					//   <Route key={id} {...configs} />
-					// )
 				)}
 			</Routes>
+			<Footer />
 		</div>
 	);
 }
 
 export default App;
-
-{
-	/* <Route path="profile" element={<Profile />}>
-          {route.map(({ path }) => (
-            <Route path={path} element={<MeningBuyurtmalarim />} />
-          ))}
-        </Route> */
-}

@@ -1,6 +1,6 @@
 import BookSection from "./customs/books-section";
 import Flayer from "./customs/flayer";
-import LastPages from "./customs/last-pages";
+// import LastPages from "./customs/last-pages";
 import MobileApp from "./customs/mobile-app";
 import MonthTopBooks from "./customs/month-top-books/imdex";
 import News from "./customs/news";
@@ -17,7 +17,7 @@ const Home = () => {
 			<MobileApp />
 			<Statistics />
 			<News />
-			<LastPages />
+			{/* <LastPages /> */}
 		</div>
 	);
 };

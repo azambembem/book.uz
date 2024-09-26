@@ -23,30 +23,68 @@ const Sidebar = () => {
 			</div>
 			<div className="w-full h-[1px] bg-[#dbdbdb] mt-5" />
 			<div className="mt-5 flex flex-col gap-5">
+				{/* <div
+          onClick={() => navigate("./profile")}
+          className="flex gap-2 items-center cursor-pointer hover:text-[#ef7f1a]"
+          //  {
+          // 	route.map(({title, path, id})=> (
+          // 		<div key={id} onClick={() => navigate(path)}>
+          //             <Combine className="w-4 h-4" />
+          //             <h3 className="text-sm">{title}</h3>
+          //         </div>
+          // 	))
+          //  }
+        >
+          <Combine className="w-4 h-4" />
+          <h3 className="text-sm">Dashboard</h3>
+        </div> 
+        <div
+          onClick={() => navigate("/profile/my-products")}
+          className="flex gap-2 items-center cursor-pointer hover:text-[#ef7f1a]"
+        >
+          <Combine className="w-4 h-4" />
+          <h3 className="text-sm">Mening Buyurtmalarim</h3>
+        </div>
+        <div
+          onClick={() => navigate("/profile/settings")}
+          className="flex gap-2 items-center cursor-pointer hover:text-[#ef7f1a]"
+        >
+          <Combine className="w-4 h-4" />
+          <h3 className="text-sm">Sozlamalar</h3>
+        </div> */}
 				<div
-					onClick={() => navigate("./profile")}
+					onClick={() => navigate("./profile")} // tepadagi comment bulgan codelarni togrilagan varianti
+					onKeyUp={(event) => {
+						if (event.key === "Enter" || event.key === " ") {
+							navigate("./profile");
+						}
+					}}
 					className="flex gap-2 items-center cursor-pointer hover:text-[#ef7f1a]"
-					//  {
-					// 	route.map(({title, path, id})=> (
-					// 		<div key={id} onClick={() => navigate(path)}>
-					//             <Combine className="w-4 h-4" />
-					//             <h3 className="text-sm">{title}</h3>
-					//         </div>
-					// 	))
-					//  }
 				>
 					<Combine className="w-4 h-4" />
 					<h3 className="text-sm">Dashboard</h3>
 				</div>
+
 				<div
 					onClick={() => navigate("/profile/my-products")}
+					onKeyUp={(event) => {
+						if (event.key === "Enter" || event.key === " ") {
+							navigate("/profile/my-products");
+						}
+					}}
 					className="flex gap-2 items-center cursor-pointer hover:text-[#ef7f1a]"
 				>
 					<Combine className="w-4 h-4" />
 					<h3 className="text-sm">Mening Buyurtmalarim</h3>
 				</div>
+
 				<div
 					onClick={() => navigate("/profile/settings")}
+					onKeyUp={(event) => {
+						if (event.key === "Enter" || event.key === " ") {
+							navigate("/profile/settings");
+						}
+					}}
 					className="flex gap-2 items-center cursor-pointer hover:text-[#ef7f1a]"
 				>
 					<Combine className="w-4 h-4" />
