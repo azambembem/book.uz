@@ -1,5 +1,4 @@
-const SelecteedBook = () => {
-  return <div>SelecteedBook</div>;
+import SelectedBookComponent from "@/components/books/selected-book";
+export const SelectedBook = () => {
+  return <SelectedBookComponent />;
 };
-
-export default SelecteedBook;

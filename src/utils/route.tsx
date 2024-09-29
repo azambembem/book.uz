@@ -1,14 +1,12 @@
 import Dashboard from "@/components/profile/customs/sections/dashboard";
 import MeningBuyurtmalarim from "@/components/profile/customs/sections/mening-buyurtmalarim";
 import Sozlamalar from "@/components/profile/customs/sections/sozlamalar";
-import Books from "@/pages/books";
-import SelecteedBook from "@/pages/books/selected-book";
+import Books, { SelectedBook } from "@/pages/books";
 import Home from "@/pages/home";
 // import MeningBuyurtmalarim from "@/pages/mening-buyurtmalarim";
 import Profile from "@/pages/profile";
 import Word from "@/pages/word";
 import type { IRoute } from "@/types";
-import { title } from "process";
 
 export const route: IRoute[] = [
   {
@@ -57,8 +55,8 @@ export const route: IRoute[] = [
     children: [
       {
         title: "Selected Book",
-        path: "selected-book",
-        element: <SelecteedBook />,
+        path: ":id",
+        element: <SelectedBook />,
         id: 3.1
       }
     ]
