@@ -6,14 +6,12 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
-import BookMaterial from "./customs/book-material";
-import Description from "./customs/description";
-import Suggestion from "./customs/suggestion";
+import AuthorMaterial from "./customs/author-material";
 import AuthorBooks from "./customs/author-books";
 
-const SlectedBoook = () => {
+const SelectedAuthor = () => {
   return (
-    <div className=" w-[90%] m-auto flex flex-col gap-6 mt-6">
+    <div className=" w-[90%] m-auto flex-col gap-6 mt-6">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -21,23 +19,19 @@ const SlectedBoook = () => {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/books">Badiiy Kitoblar</BreadcrumbLink>
+            <BreadcrumbLink href="/authors">Mualliflar</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>
-              Garry Poter ratsional fikrlash usullari
-            </BreadcrumbPage>
+            <BreadcrumbPage>Stiven King</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
 
-      <BookMaterial />
-      <Description />
-      <Suggestion />
+      <AuthorMaterial />
       <AuthorBooks />
     </div>
   );
 };
 
-export default SlectedBoook;
+export default SelectedAuthor;
