@@ -24,3 +24,4 @@ export type IRoute = {
 	hasChild?: boolean;
 	children?: IRoute[];
 };
+
