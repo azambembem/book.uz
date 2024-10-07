@@ -80,9 +80,13 @@ const AllCategories = () => {
   return (
     <div className="p-4 bg-[#f6f6f6]">
       <div className="flex items-center space-x-2 h-[52px]">
-        <Checkbox id="terms" />
+        <Checkbox
+          onCheckedChange={() => setParams({ category: "all-categories" })}
+          id="all-categories"
+          checked={getParams("category") === "all-categories"}
+        />
         <label
-          htmlFor="terms"
+          htmlFor="all-categories"
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
           All Categories
@@ -95,29 +99,31 @@ const AllCategories = () => {
       />
       <ScrollArea className="h-72 rounded-md">
         <div className="flex flex-col gap-2">
-          {isLoading
+          {loading
             ? Array.from({ length: 10 }).map(() => (
-                <Skeleton className="w-full h-full bg-[#c1c1c1]" key={v4()} />
+                <Skeleton className="w-full h-10 bg-[#c1c1c1]" key={v4()} />
               ))
             : all_categories?.map((category) => (
-                <div key={category._id}>
-                  <div className="flex items-center space-x-2 h-[48px]">
-                    <Checkbox
-                      checked={category._id === getParams("category")}
-                      onCheckedChange={() => {
-                        console.log("Checked");
-                        setParams({ category: category._id });
-                      }}
-                      id={category._id}
-                      name={category._id}
-                    />
-                    <label
-                      htmlFor={category._id}
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      {category.name}
-                    </label>
-                  </div>
+                <div
+                  key={category._id}
+                  className="flex items-center space-x-2 h-[48px]"
+                >
+                  <Checkbox
+                    checked={category._id === getParams("category")}
+                    onCheckedChange={() => {
+                      console.log("Checked");
+
+                      setParams({ category: category._id });
+                    }}
+                    id={category._id}
+                    name={category._id}
+                  />
+                  <label
+                    htmlFor={category._id}
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    {category.name}
+                  </label>
                 </div>
               ))}
         </div>
