@@ -24,4 +24,16 @@ export type IRoute = {
 	hasChild?: boolean;
 	children?: IRoute[];
 };
-
+export type TAuthor = {
+	_id: string;
+	fullName: string;
+	link: string;
+	bookCount: number;
+	biography: string;
+	dateOfbirth: string;
+	dateOfdeath: string;
+	imgUrl: string;
+	createdAt: string;
+	updatedAt: string;
+	__v: 0;
+}
