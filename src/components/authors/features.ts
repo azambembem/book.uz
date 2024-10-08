@@ -4,11 +4,11 @@ import axios from "axios";
 export const useAuthorsFeatures = () => {
     const authors = useInfiniteQuery({
         queryKey: ["authors"],
-        queryFn: async ({pageParam}) => {
-            const {data} = await axios {(
+        queryFn: async ({ pageParam }) => {
+            const {data} = await axios ({
                 url: `https://book-uz-backend.onrender.com/api/authors?page=${pageParam}&limit=10`,
 
-            )};
+            })
             return data.data ?? [];
         },
         initialPageParam: 1,
