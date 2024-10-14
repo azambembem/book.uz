@@ -36,7 +36,7 @@ export type TAuthor = {
 	createdAt: string;
 	updatedAt: string;
 	__v: 0;
-}
+};
 
 export type TNews = {
 	_id: string;

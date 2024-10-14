@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import type {UseQueryResult} from "@tanstack/react-query"
 import axios from "axios";
 
-type useNewsFeatures = {
+type NewsFeatures = {
     news: UseQueryResult<TNews[], Error>;
 }
 
