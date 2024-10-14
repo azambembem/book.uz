@@ -37,3 +37,16 @@ export type TAuthor = {
 	updatedAt: string;
 	__v: 0;
 }
+
+export type TNews = {
+	_id: string;
+	content: string;
+	imgUrl: string;
+	isRead: boolean;
+	readCount: number;
+	title: string;
+	type: string;
+	createdAt: string;
+	updatedAt: string;
+
+}

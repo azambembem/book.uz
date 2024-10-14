@@ -4,6 +4,7 @@ import Sozlamalar from "@/components/profile/customs/sections/sozlamalar";
 import Authors, { SelectedAuthor } from "@/pages/authors";
 import Books, { SelectedBook } from "@/pages/books";
 import Home from "@/pages/home";
+import News, { SelectedNews } from "@/pages/news";
 // import MeningBuyurtmalarim from "@/pages/mening-buyurtmalarim";
 import Profile from "@/pages/profile";
 import Word from "@/pages/word";
@@ -86,6 +87,21 @@ export const route: IRoute[] = [
         path: ":id",
         element: <SelectedAuthor />,
         id: 6.1
+      }
+    ]
+  },
+  {
+    title: "News",
+    path: "/news",
+    element: <News />,
+    id: 7,
+    hasChild: true,
+    children: [
+      {
+        title: "Selected News",
+        path: ":id",
+        element: <SelectedNews />,
+        id: 7.1
       }
     ]
   }
