@@ -5,6 +5,7 @@ import Authors, { SelectedAuthor } from "@/pages/authors";
 import Books, { SelectedBook } from "@/pages/books";
 import Home from "@/pages/home";
 import News, { SelectedNews } from "@/pages/news";
+import Orders from "@/pages/orders";
 // import MeningBuyurtmalarim from "@/pages/mening-buyurtmalarim";
 import Profile from "@/pages/profile";
 import Word from "@/pages/word";
@@ -104,5 +105,11 @@ export const route: IRoute[] = [
         id: 7.1
       }
     ]
+  },
+  {
+    title: "Orders",
+    path: "/orders",
+    element: <Orders />,
+    id: 8
   }
 ];
