@@ -5,7 +5,7 @@ import Authors, { SelectedAuthor } from "@/pages/authors";
 import Books, { SelectedBook } from "@/pages/books";
 import Home from "@/pages/home";
 import News, { SelectedNews } from "@/pages/news";
-import Orders from "@/pages/orders";
+import Orders, { Checkout } from "@/pages/orders";
 // import MeningBuyurtmalarim from "@/pages/mening-buyurtmalarim";
 import Profile from "@/pages/profile";
 import Word from "@/pages/word";
@@ -110,6 +110,15 @@ export const route: IRoute[] = [
     title: "Orders",
     path: "/orders",
     element: <Orders />,
-    id: 8
+    id: 8,
+    hasChild: true,
+    children: [
+      {
+        title: "Checkout",
+        path: ":id",
+        element: <Checkout />,
+        id: 8.1
+      }
+    ]
   }
 ];
