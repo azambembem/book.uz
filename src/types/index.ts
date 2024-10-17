@@ -49,4 +49,48 @@ export type TNews = {
 	createdAt: string;
 	updatedAt: string;
 
+};
+export type IBook = {
+	_id: string;
+	name: string;
+	genre: {
+		_id: string;
+        name: string;
+		imgUrl: string;
+	};
+	author: {
+		_id: string;
+        fullName: string;
+        imgUrl: string | null;
+	};
+	amount: number;
+	bookPrice: number;
+	language: string;
+	cover: "hard" | "soft";
+	discount: number;
+	hasDiscount: boolean;
+	description: string;
+	numberOfPage: number;
+	state: "new" | "old";
+	year: number;
+	barCode: string;
+	imgUrl: string;
+	additionalImages: string [];
+	rateCount: number;
+	rating: number;
+	soldBookCount: number;
+	createdAt: string;
+	updatedAt: string;
+	link: string;
+};
+
+export type THudud = {
+	_id: string;
+	name: string;
+	paymanetTypes: ("balance" | "card")[]
+};
+
+export type TTuman = {
+	_id: string;
+	name: string;
 }
