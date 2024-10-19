@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { useSidebarFeatures } from "./features";
 
 const Sidebar = () => {
+  const { onSubmit } = useSidebarFeatures();
   return (
     <div className="w-[287px] ">
       <div className="w-full h-fit bg-[#f6f6f6] rounded-xl p-4">
@@ -33,7 +35,10 @@ const Sidebar = () => {
         <Label htmlFor="checkbox"> Qoidalar bilan roziman.</Label>
       </div>
 
-      <Button className="w-full flex items-center justify-center gap-2 mt-4">
+      <Button
+        onClick={() => onSubmit()}
+        className="w-full flex items-center justify-center gap-2 mt-4"
+      >
         <img src="/icons/bag.svg" alt="bag" /> <h3>Xarid Qilish</h3>
       </Button>
     </div>

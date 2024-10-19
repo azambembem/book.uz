@@ -1,10 +1,15 @@
-import type{ IBook, THudud } from "@/types";
+import type{ IBook, THudud, TTuman } from "@/types";
 import { createSlice } from "@reduxjs/toolkit";
 
 type InitialState = {
     books: (IBook & {quantity: number})[];
     checkout: {
         hudud: THudud | null;
+        tuman: TTuman | null;
+        manzil: string;
+        name: string;
+        surname: string;
+        phone: string;
     }
 
 };
@@ -13,6 +18,11 @@ const initialState: InitialState = {
     books: [],
     checkout: {
         hudud: null,
+        tuman: null,
+        manzil: "",
+        name: "",
+        surname: "",
+        phone: "",
     },
 }; 
 

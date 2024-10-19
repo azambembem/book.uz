@@ -47,7 +47,15 @@ const Manzil = () => {
         </div>
         <div className="grid w-full max-w-sm items-center gap-1.5">
           <Label htmlFor="familiyangiz">Tuman</Label>
-          <Select>
+          <Select
+            onValueChange={(value) => {
+              dispatch(
+                setCheckout({
+                  tuman: tuman?.find((hudud) => hudud._id === value)
+                })
+              );
+            }}
+          >
             <SelectTrigger id="tuman">
               <SelectValue placeholder="Tuman" />
             </SelectTrigger>
@@ -62,7 +70,12 @@ const Manzil = () => {
         </div>
         <div className="grid w-full max-w-sm items-center gap-1.5">
           <Label htmlFor="telefon-raqam">Manzil</Label>
-          <Input type="manzil" id="manzilm" placeholder="Manzil" />
+          <Input
+            onChange={(e) => dispatch(setCheckout({ manzil: e.target.value }))}
+            type="manzil"
+            id="manzilm"
+            placeholder="Manzil"
+          />
         </div>
       </div>
       <div className="mt-4">
