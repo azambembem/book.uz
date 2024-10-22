@@ -1,10 +1,14 @@
 import { useSearchAppParams } from "@/hooks/useRedux/useSearchParams";
+import type{ IBook } from "@/types";
 import {useQuery} from "@tanstack/react-query"
+import type {UseQueryResult} from "@tanstack/react-query"
 import axios from "axios";
 
+type BodyfFeatures = {
+    books: UseQueryResult<IBook[], Error>
+}
 
-
-export const useBodyFeatures = () => {
+export const useBodyFeatures = (): BodyfFeatures => {
     const {getParams} = useSearchAppParams();
     const genreIds = getParams("category") ?? "all-category";
     const authorIds = getParams("author") ?? "all-author";

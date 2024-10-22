@@ -12,17 +12,9 @@ const Body = () => {
   const cols = getParams("cols") ?? "3";
   return (
     <div className={`grid grid-cols-${cols} gap-6 my-6`}>
-      {books?.map(() => (
-        <Card />
+      {books?.map((book) => (
+        <Card key={book._id} {...book} />
       ))}
-      {/* <Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card /> */}
     </div>
   );
 };
